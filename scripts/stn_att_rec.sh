@@ -1,6 +1,6 @@
 CUDA_VISIBLE_DEVICES=0 python main.py \
-  --synthetic_train_data_dir /data/train_folder/ \
-  --test_data_dir /data/mkyang/scene_text/recognition/benchmark_lmdbs_new/IIIT5K_3000/ \
+  --synthetic_train_data_dir data/train_folder/ \
+  --test_data_dir data/est_folder/ \
   --batch_size 1024 \
   --workers 8 \
   --height 64 \
