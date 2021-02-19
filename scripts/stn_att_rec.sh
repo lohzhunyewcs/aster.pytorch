@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=0,1 python main.py \
+CUDA_VISIBLE_DEVICES=0 python main.py \
   --synthetic_train_data_dir /data/mkyang/scene_text/recognition/CVPR2016/ /data/mkyang/scene_text/recognition/NIPS2014/ \
   --test_data_dir /data/mkyang/scene_text/recognition/benchmark_lmdbs_new/IIIT5K_3000/ \
   --batch_size 1024 \
