@@ -23,6 +23,7 @@ def get_vocabulary(voc_type, EOS='EOS', PADDING='PADDING', UNKNOWN='UNKNOWN'):
   voc.append(EOS)
   voc.append(PADDING)
   voc.append(UNKNOWN)
+  voc.append(' ')
 
   return voc
 

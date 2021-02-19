@@ -1,6 +1,6 @@
-CUDA_VISIBLE_DEVICES=0 python main.py \
+CUDA_VISIBLE_DEVICES=0 python3 main.py \
   --synthetic_train_data_dir data/train_folder/ \
-  --test_data_dir data/test_folder/ \
+  --test_data_dir data/train_folder/ \
   --batch_size 1024 \
   --workers 8 \
   --height 64 \
