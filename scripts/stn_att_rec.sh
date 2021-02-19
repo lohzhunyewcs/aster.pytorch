@@ -1,5 +1,5 @@
 CUDA_VISIBLE_DEVICES=0 python main.py \
-  --synthetic_train_data_dir /data/mkyang/scene_text/recognition/CVPR2016/ /data/mkyang/scene_text/recognition/NIPS2014/ \
+  --synthetic_train_data_dir /data/train_folder/ \
   --test_data_dir /data/mkyang/scene_text/recognition/benchmark_lmdbs_new/IIIT5K_3000/ \
   --batch_size 1024 \
   --workers 8 \
@@ -16,4 +16,4 @@ CUDA_VISIBLE_DEVICES=0 python main.py \
   --tps_outputsize 32 100 \
   --tps_margins 0.05 0.05 \
   --stn_activation none \
-  --num_control_points 20 \
+  --num_control_points 20 
