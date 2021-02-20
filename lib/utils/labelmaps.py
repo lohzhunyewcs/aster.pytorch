@@ -20,10 +20,10 @@ def get_vocabulary(voc_type, EOS='EOS', PADDING='PADDING', UNKNOWN='UNKNOWN'):
     raise KeyError('voc_type must be one of "LOWERCASE", "ALLCASES", "ALLCASES_SYMBOLS"')
 
   # update the voc with specifical chars
+  voc.append(' ')
   voc.append(EOS)
   voc.append(PADDING)
   voc.append(UNKNOWN)
-  voc.append(' ')
 
   return voc
 

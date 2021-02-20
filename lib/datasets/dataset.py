@@ -108,7 +108,9 @@ class LmdbDataset(data.Dataset):
         label_list.append(self.char2id[self.UNKNOWN])
     ## add a stop token
     label_list = label_list + [self.char2id[self.EOS]]
-    assert len(label_list) <= self.max_len
+    if len(label_list) > self.max_len:
+      raise Exception(f'{len(label_list) = }, {self.max_len = }, {label = }, {len(label) = }')
+    # assert len(label_list) <= self.max_len
     label[:len(label_list)] = np.array(label_list)
 
     if len(label) <= 0:
