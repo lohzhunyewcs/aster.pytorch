@@ -110,7 +110,8 @@ class LmdbDataset(data.Dataset):
     label_list = label_list + [self.char2id[self.EOS]]
     if len(label_list) > self.max_len:
       raise Exception(f'len(label_list) =  {len(label_list)}, \
-      self.max_len =  {self.max_len}, label = {label}, len(label) = {len(label)}')
+      self.max_len =  {self.max_len}, label = {label}, len(label) = {len(label)} \
+        word = {word}')
     # assert len(label_list) <= self.max_len
     label[:len(label_list)] = np.array(label_list)
 
