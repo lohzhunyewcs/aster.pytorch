@@ -155,7 +155,7 @@ class BaseTrainer(object):
         # if epoch < 1:
         #   continue
         save_checkpoint({
-          'state_dict': self.model.module.state_dict(),
+          'state_dict': self.model.state_dict(),
           'iters': self.iters,
           'best_res': self.best_res,
         }, is_best, fpath=osp.join(self.logs_dir, 'checkpoint.pth.tar'))

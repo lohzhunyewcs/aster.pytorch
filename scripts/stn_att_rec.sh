@@ -1,8 +1,8 @@
 CUDA_VISIBLE_DEVICES=0 python main.py \
   --synthetic_train_data_dir data/train_folder/ \
   --test_data_dir data/test_folder/ \
-  --batch_size 1 \
-  --workers 8 \
+  --batch_size 2 \
+  --workers 0 \
   --height 64 \
   --width 256 \
   --voc_type ALLCASES_SYMBOLS \
@@ -10,7 +10,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py \
   --with_lstm \
   --logs_dir logs/baseline_aster \
   --real_logs_dir /data/mkyang/logs/recognition/aster.pytorch \
-  --max_len 100 \
+  --max_len 125 \
   --STN_ON \
   --tps_inputsize 32 64 \
   --tps_outputsize 32 100 \
