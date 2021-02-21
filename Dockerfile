@@ -23,7 +23,7 @@ RUN conda env create -f environment.yml
 ENV PATH /opt/conda/envs/recognition/bin:$PATH
 RUN /bin/bash -c "source activate recognition"
 
-CMD [ "sh ", "scripts/stn_att_rec.sh" ]
+CMD [ "bash ", "scripts/stn_att_rec.sh" ]
 
 # # Make RUN commands use the new environment:
 # SHELL ["conda", "run", "-n", "recognition", "/bin/bash", "-c"]
