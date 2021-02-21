@@ -20,7 +20,7 @@ WORKDIR /usr/src/app
 COPY ./ ./
 RUN conda env create -f environment.yml
 
-ENV PATH /opt/conda/envs/recognition/bin:$PATH
+ENV PATH="/opt/conda/envs/recognition/bin:${PATH}"
 RUN /bin/bash -c "source activate recognition"
 
 ENTRYPOINT [ "bash ", "scripts/stn_att_rec.sh" ]
