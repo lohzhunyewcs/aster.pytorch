@@ -5,6 +5,8 @@ FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 # RUN source ~/.bashrc && conda install environment.yml
 # CMD source activate recognition && sh scripts/stn_att_rec.sh
 
+RUN apt install zip
+
 FROM continuumio/miniconda
 ENV FORCE_CUDA="1"
 WORKDIR /usr/src/app
