@@ -1,7 +1,7 @@
 CUDA_VISIBLE_DEVICES=0 python main.py \
   --synthetic_train_data_dir data/train_folder/ \
   --test_data_dir data/test_folder/ \
-  --batch_size 2 \
+  --batch_size 16 \
   --workers 0 \
   --height 64 \
   --width 256 \
@@ -16,4 +16,5 @@ CUDA_VISIBLE_DEVICES=0 python main.py \
   --tps_outputsize 32 100 \
   --tps_margins 0.05 0.05 \
   --stn_activation none \
-  --num_control_points 20 
+  --num_control_points 20 \
+  --resume logs/baseline_aster/checkpoint.pth.tar
