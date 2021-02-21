@@ -14,7 +14,7 @@ RUN apt-get install -y zip
 
 FROM continuumio/miniconda
 ENV FORCE_CUDA="1"
-ENV PYTHONBUFFERED=0
+ENV PYTHONBUFFERED="0"
 WORKDIR /usr/src/app
 COPY ./ ./
 RUN conda env create -f environment.yml
