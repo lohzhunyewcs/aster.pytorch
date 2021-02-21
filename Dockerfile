@@ -18,11 +18,11 @@ WORKDIR /usr/src/app
 COPY ./ ./
 RUN conda env create -f environment.yml
 
-CMD ["bash"]
+# CMD ["bash"]
 
-# # Make RUN commands use the new environment:
-# SHELL ["conda", "run", "-n", "recognition", "/bin/bash", "-c"]
+# Make RUN commands use the new environment:
+SHELL ["conda", "run", "-n", "recognition", "/bin/bash", "-c"]
 
-# # EXPOSE 5003
-# # The code to run when container is started:
-# ENTRYPOINT ["conda", "run", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
+# EXPOSE 5003
+# The code to run when container is started:
+ENTRYPOINT ["conda", "run", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
