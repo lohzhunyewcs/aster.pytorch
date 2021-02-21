@@ -12,7 +12,7 @@ RUN  apt-get update -y && \
      apt-get clean
 RUN apt-get install -y zip 
 
-FROM continuumio/miniconda3:
+FROM continuumio/miniconda3
 ENV FORCE_CUDA="1"
 ENV PYTHONBUFFERED="1"
 ENV PYTHONUNBUFFERED="1"
