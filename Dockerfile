@@ -12,7 +12,7 @@ RUN  apt-get update -y && \
      apt-get clean
 RUN apt-get install -y zip 
 
-FROM continuumio/miniconda
+FROM continuumio/miniconda:4.9.2
 ENV FORCE_CUDA="1"
 ENV PYTHONBUFFERED="1"
 ENV PYTHONUNBUFFERED="1"
@@ -21,14 +21,15 @@ COPY ./ ./
 RUN conda env create -f environment.yml
 
 # ENV PATH="/opt/conda/envs/recognition/bin:${PATH}"
-RUN /bin/bash -c "conda activate recognition"
+# RUN /bin/bash -c "conda activate recognition"
 
 # ENTRYPOINT [ "bash ", "scripts/stn_att_rec.sh" ]
 
-# # Make RUN commands use the new environment:
-# SHELL ["conda", "run", "-n", "recognition", "/bin/bash", "-c"]
+# Make RUN commands use the new environment:
+SHELL ["conda", "run", "-n", "recognition", "/bin/bash", "-c"]
 
-# # EXPOSE 5003
-# # The code to run when container is started:
-# ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
+# EXPOSE 5003
+# The code to run when container is started:
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
+# ENTRYPOINT ["conda", "run", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
 
