@@ -20,11 +20,15 @@ WORKDIR /usr/src/app
 COPY ./ ./
 RUN conda env create -f environment.yml
 
-# CMD ["bash"]
+ENV PATH /opt/conda/envs/mro_env/bin:$PATH
+RUN /bin/bash -c "source activate recognition"
 
-# Make RUN commands use the new environment:
-SHELL ["conda", "run", "-n", "recognition", "/bin/bash", "-c"]
+CMD [ "sh ", "scripts/stn_att_rec.sh" ]
 
-# EXPOSE 5003
-# The code to run when container is started:
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
+# # Make RUN commands use the new environment:
+# SHELL ["conda", "run", "-n", "recognition", "/bin/bash", "-c"]
+
+# # EXPOSE 5003
+# # The code to run when container is started:
+# ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
+
