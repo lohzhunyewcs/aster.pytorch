@@ -215,7 +215,7 @@ def main(args):
   # Final test
   print('Test with best model:')
   checkpoint = load_checkpoint(osp.join(args.logs_dir, 'model_best.pth.tar'))
-  model.module.load_state_dict(checkpoint['state_dict'])
+  model.load_state_dict(checkpoint['state_dict'])
   evaluator.evaluate(test_loader, dataset=test_dataset)
 
   # Close the tensorboard logger
