@@ -14,7 +14,8 @@ RUN apt-get install -y zip
 
 FROM continuumio/miniconda
 ENV FORCE_CUDA="1"
-ENV PYTHONBUFFERED="0"
+ENV PYTHONBUFFERED="1"
+ENV PYTHONUNBUFFERED="1"
 WORKDIR /usr/src/app
 COPY ./ ./
 RUN conda env create -f environment.yml
@@ -26,4 +27,4 @@ SHELL ["conda", "run", "-n", "recognition", "/bin/bash", "-c"]
 
 # EXPOSE 5003
 # The code to run when container is started:
-ENTRYPOINT ["conda", "run", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "recognition", "sh", "scripts/stn_att_rec.sh"]
