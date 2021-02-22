@@ -18,4 +18,5 @@ CUDA_VISIBLE_DEVICES=0 python -u main.py \
   --stn_activation none \
   --num_control_points 20 \
   --resume logs/baseline_aster/checkpoint.pth.tar \
+  --print_freq 2 \
   --epochs 20
