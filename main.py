@@ -200,6 +200,7 @@ def main(args):
 
   # Start training
   evaluator.evaluate(test_loader, step=0, tfLogger=eval_tfLogger, dataset=test_dataset)
+  start_epoch = 0
   for epoch in range(start_epoch, args.epochs):
     scheduler.step(epoch)
     current_lr = optimizer.param_groups[0]['lr']
