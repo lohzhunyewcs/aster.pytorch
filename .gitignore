@@ -238,3 +238,5 @@ logs
 *.jpeg
 viz
 vis
+
+docker_building_scripts.txt
