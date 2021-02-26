@@ -121,6 +121,7 @@ def pred_one_image(args):
   output_dict = model(input_dict)
   pred_rec = output_dict['output']['pred_rec']
   pred_str, _ = get_str_list(pred_rec, input_dict['rec_targets'], dataset=dataset_info)
+  pred_str[0] = ''.join(pred_str[0])
   print('Recognition result: {0}'.format(pred_str[0]))
   return pred_str[0]
 
@@ -132,7 +133,7 @@ def pred_folder(args):
   for img_path in img_paths:
     args.image_path = img_path
     print(f'On img_path = {img_path}')
-    res = pred_one_image(args)
+    res = (pred_one_image(args))
     res_list.append((img_path, res))
   
   with open('result.txt', 'w') as result_file:
