@@ -50,16 +50,16 @@ def get_str_list(output, target, dataset=None):
         break
     targ_list.append(targ_list_i)
 
-  # char list to string
-  # if dataset.lowercase:
-  if True:
-    # pred_list = [''.join(pred).lower() for pred in pred_list]
-    # targ_list = [''.join(targ).lower() for targ in targ_list]
-    pred_list = [_normalize_text(pred) for pred in pred_list]
-    targ_list = [_normalize_text(targ) for targ in targ_list]
-  else:
-    pred_list = [''.join(pred) for pred in pred_list]
-    targ_list = [''.join(targ) for targ in targ_list]
+  # # char list to string
+  # # if dataset.lowercase:
+  # if True:
+  #   # pred_list = [''.join(pred).lower() for pred in pred_list]
+  #   # targ_list = [''.join(targ).lower() for targ in targ_list]
+  #   pred_list = [_normalize_text(pred) for pred in pred_list]
+  #   targ_list = [_normalize_text(targ) for targ in targ_list]
+  # else:
+  #   pred_list = [''.join(pred) for pred in pred_list]
+  #   targ_list = [''.join(targ) for targ in targ_list]
 
   return pred_list, targ_list
 

@@ -137,7 +137,7 @@ def pred_folder(args):
   
   with open('result.txt', 'w') as result_file:
     for img_path, res in res_list:
-      result_file.write(f'{img_path}\t{res}')
+      result_file.write(f'{img_path}\t{res}\n')
 
 
 def main(args):
