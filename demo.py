@@ -66,11 +66,6 @@ class DataInfo(object):
     self.rec_num_classes = len(self.voc)
 
 
-def main(args):
-  if args.is_pred_folder:
-    pred_folders(args)
-  else:
-    pred_one_image(args)
 
 def pred_one_image(args):
   np.random.seed(args.seed)
@@ -141,6 +136,13 @@ def pred_folder(args):
   with open('result.txt', 'w') as result_file:
     for img_path, res in res_list:
       result_file.write(f'{img_path}\t{res}')
+
+
+def main(args):
+  if args.is_pred_folder:
+    pred_folder(args)
+  else:
+    pred_one_image(args)
 
 if __name__ == '__main__':
   # parse the config
