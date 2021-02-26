@@ -134,7 +134,7 @@ def pred_folder(args):
   ]
   for img_path in img_paths:
     args.image_path = img_path
-    print(f'On {img_path = }')
+    print(f'On img_path = {img_path}')
     res = pred_one_image(args)
     res_list.append((img_path, res))
   
