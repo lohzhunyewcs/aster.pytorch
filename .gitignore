@@ -243,3 +243,4 @@ vis
 docker_building_scripts.txt
 local_scripts
 local_scripts/*
+result.txt
