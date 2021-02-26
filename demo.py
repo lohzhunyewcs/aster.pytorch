@@ -102,6 +102,8 @@ def pred_one_image(args):
     device = torch.device("cuda")
     model = model.to(device)
     model = nn.DataParallel(model)
+  else:
+    device = torch.device("cpu")
 
   # Evaluation
   model.eval()
@@ -147,4 +149,5 @@ def main(args):
 if __name__ == '__main__':
   # parse the config
   args = get_args(sys.argv[1:])
+  print(f'args.cuda = {args.cuda }')
   main(args)
