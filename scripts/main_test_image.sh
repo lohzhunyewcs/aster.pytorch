@@ -4,7 +4,7 @@ CUDA_VISIBLE_DEVICES=0 python demo.py \
   --voc_type ALLCASES_SYMBOLS \
   --arch ResNet_ASTER \
   --with_lstm \
-  --max_len 100 \
+  --max_len 125 \
   --STN_ON \
   --beam_width 5 \
   --tps_inputsize 32 64 \

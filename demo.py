@@ -67,6 +67,12 @@ class DataInfo(object):
 
 
 def main(args):
+  if args.is_pred_folder:
+    pass
+  else:
+    pred_one_image(args)
+
+def pred_one_image(args):
   np.random.seed(args.seed)
   torch.manual_seed(args.seed)
   torch.cuda.manual_seed(args.seed)
@@ -119,7 +125,22 @@ def main(args):
   pred_rec = output_dict['output']['pred_rec']
   pred_str, _ = get_str_list(pred_rec, input_dict['rec_targets'], dataset=dataset_info)
   print('Recognition result: {0}'.format(pred_str[0]))
+  return pred_str[0]
 
+def pred_folder(args):
+  res_list = []
+  img_paths = [
+    args.folder_path + img_path for img_path in os.listdir(args.folder_path)
+  ]
+  for img_path in img_paths:
+    args.image_path = img_path
+    print(f'On {img_path = }')
+    res = pred_one_image(args)
+    res_list.append((img_path, res))
+  
+  with open('result.txt', 'w') as result_file:
+    for img_path, res in res_list:
+      result_file.write(f'{img_path}\t{res}')
 
 if __name__ == '__main__':
   # parse the config

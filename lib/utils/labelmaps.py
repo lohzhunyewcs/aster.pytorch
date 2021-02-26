@@ -16,11 +16,12 @@ def get_vocabulary(voc_type, EOS='EOS', PADDING='PADDING', UNKNOWN='UNKNOWN'):
     voc = list(string.digits + string.ascii_letters)
   elif voc_type == 'ALLCASES_SYMBOLS':
     voc = list(string.printable[:-6])
+  elif voc_type == 'ALLCASES_SYMBOLS_SPACE':
+    voc = list(string.printable[:-6]) + [' ']
   else:
     raise KeyError('voc_type must be one of "LOWERCASE", "ALLCASES", "ALLCASES_SYMBOLS"')
 
   # update the voc with specifical chars
-  voc.append(' ')
   voc.append(EOS)
   voc.append(PADDING)
   voc.append(UNKNOWN)

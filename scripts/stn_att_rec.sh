@@ -5,7 +5,7 @@ CUDA_VISIBLE_DEVICES=0 python -u main.py \
   --workers 0 \
   --height 64 \
   --width 256 \
-  --voc_type ALLCASES_SYMBOLS \
+  --voc_type ALLCASES_SYMBOLS_SPACE \
   --arch ResNet_ASTER \
   --with_lstm \
   --logs_dir logs/baseline_aster \

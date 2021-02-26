@@ -99,6 +99,12 @@ parser.add_argument('--vis_dir', type=str, metavar='PATH', default='',
 parser.add_argument('--run_on_remote', action='store_true', default=False,
                     help="run the code on remote or local.")
 
+# Testing stuffs
+parser.add_argument('--is_pred_folder', default=False, type=bool,
+                    help='whether use cuda support.')
+parser.add_argument('--folder_path', type=str, default='',
+                    help='the path of the folder of images, used in demo.py.')
+
 def get_args(sys_args):
   global_args = parser.parse_args(sys_args)
   return global_args
