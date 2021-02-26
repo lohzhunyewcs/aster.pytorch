@@ -68,7 +68,7 @@ class DataInfo(object):
 
 def main(args):
   if args.is_pred_folder:
-    pass
+    pred_folders(args)
   else:
     pred_one_image(args)
 
