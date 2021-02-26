@@ -55,7 +55,7 @@ class DataInfo(object):
     super(DataInfo, self).__init__()
     self.voc_type = voc_type
 
-    assert voc_type in ['LOWERCASE', 'ALLCASES', 'ALLCASES_SYMBOLS']
+    assert voc_type in ['LOWERCASE', 'ALLCASES', 'ALLCASES_SYMBOLS', 'ALLCASES_SYMBOLS_SPACE']
     self.EOS = 'EOS'
     self.PADDING = 'PADDING'
     self.UNKNOWN = 'UNKNOWN'
