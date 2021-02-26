@@ -32,7 +32,7 @@ parser.add_argument('--width', type=int, default=256,
 parser.add_argument('--keep_ratio', action='store_true', default=False,
                     help='length fixed or lenghth variable.')
 parser.add_argument('--voc_type', type=str, default='ALLCASES_SYMBOLS',
-                    choices=['LOWERCASE', 'ALLCASES', 'ALLCASES_SYMBOLS'])
+                    choices=['LOWERCASE', 'ALLCASES', 'ALLCASES_SYMBOLS', 'ALLCASES_SYMBOLS_SPACE'])
 parser.add_argument('--mix_data', action='store_true',
                     help="whether combine multi datasets in the training stage.")
 parser.add_argument('--num_train', type=int, default=math.inf)
