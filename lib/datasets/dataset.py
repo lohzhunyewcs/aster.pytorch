@@ -60,7 +60,7 @@ class LmdbDataset(data.Dataset):
     self.nSamples = int(self.txn.get(b"num-samples"))
     self.nSamples = min(self.nSamples, num_samples)
 
-    assert voc_type in ['LOWERCASE', 'ALLCASES', 'ALLCASES_SYMBOLS']
+    # assert voc_type in ['LOWERCASE', 'ALLCASES', 'ALLCASES_SYMBOLS']
     self.EOS = 'EOS'
     self.PADDING = 'PADDING'
     self.UNKNOWN = 'UNKNOWN'
