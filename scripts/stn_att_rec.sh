@@ -11,12 +11,12 @@ CUDA_VISIBLE_DEVICES=0 python -u main.py \
   --logs_dir logs/baseline_aster \
   --real_logs_dir /data/mkyang/logs/recognition/aster.pytorch \
   --max_len 125 \
-  --STN_ON \
+  --STN_ON False \
   --tps_inputsize 32 64 \
   --tps_outputsize 32 100 \
   --tps_margins 0.05 0.05 \
   --stn_activation none \
   --num_control_points 20 \
-  --resume logs/baseline_aster/checkpoint.pth.tar \
+  --resume logs/aster_noSTN/checkpoint.pth.tar \
   --print_freq 2 \
-  --epochs 20
+  --epochs 100
