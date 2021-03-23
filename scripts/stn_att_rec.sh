@@ -8,7 +8,7 @@ CUDA_VISIBLE_DEVICES=0 python -u main.py \
   --voc_type ALLCASES_SYMBOLS_SPACE \
   --arch ResNet_ASTER \
   --with_lstm \
-  --logs_dir logs/baseline_aster \
+  --logs_dir logs/aster_noSTN/checkpoint.pth.tar \
   --real_logs_dir /data/mkyang/logs/recognition/aster.pytorch \
   --max_len 125 \
   --STN_ON False \
