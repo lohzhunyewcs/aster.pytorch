@@ -19,6 +19,7 @@ playground/*
 logs/*
 test_data/*
 data/*
+scripts/*
 
 # model files
 *.xml
