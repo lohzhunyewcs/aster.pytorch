@@ -50,15 +50,15 @@ class ModelBuilder(nn.Module):
                       max_len_labels=max_len_labels)
     self.rec_crit = SequenceCrossEntropyLoss()
 
-    if self.STN_ON:
-      self.tps = TPSSpatialTransformer(
-        output_image_size=tuple(global_args.tps_outputsize),
-        num_control_points=global_args.num_control_points,
-        margins=tuple(global_args.tps_margins))
-      self.stn_head = STNHead(
-        in_planes=3,
-        num_ctrlpoints=global_args.num_control_points,
-        activation=global_args.stn_activation)
+    # if self.STN_ON:
+    self.tps = TPSSpatialTransformer(
+      output_image_size=tuple(global_args.tps_outputsize),
+      num_control_points=global_args.num_control_points,
+      margins=tuple(global_args.tps_margins))
+    self.stn_head = STNHead(
+      in_planes=3,
+      num_ctrlpoints=global_args.num_control_points,
+      activation=global_args.stn_activation)
 
   def forward(self, input_dict):
     return_dict = {}
