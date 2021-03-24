@@ -8,7 +8,7 @@ CUDA_VISIBLE_DEVICES=0 python -u main.py \
   --voc_type ALLCASES_SYMBOLS_SPACE \
   --arch ResNet_ASTER \
   --with_lstm \
-  --logs_dir logs/aster_noSTN/checkpoint.pth.tar \
+  --logs_dir logs/baseline_aster/checkpoint.pth.tar \
   --real_logs_dir /data/mkyang/logs/recognition/aster.pytorch \
   --max_len 125 \
   --tps_inputsize 32 64 \
@@ -17,4 +17,6 @@ CUDA_VISIBLE_DEVICES=0 python -u main.py \
   --stn_activation none \
   --num_control_points 20 \
   --print_freq 2 \
+  --STN_ON \
+  --resume logs/baseline_aster/checkpoint.pth.tar \
   --epochs 100
